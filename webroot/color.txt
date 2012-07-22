@@ -1,0 +1,5 @@
+#72C7EB; /* light blue */
+#BAD455; /* light green */
+
+#015B82; /* dark blue */
+#708C01; /* dark green */
