@@ -140,8 +140,8 @@ def wrapNone(field):
         return '"' + field + '"'
     
 def insertMovieSql(movie):
-    return "INSERT INTO `randocy`.`doubaninfo` (`doubanId`, `name`, `aliasName`, `imageUrl`, `score`, `scoreAmt`, `directors`, `writers`, `actors`, `releaseDate`, `runTime`, `summary`) VALUES (" + wrapNone(movie['doubanId']) + ", " + wrapNone(movie['name']) + ", " + wrapNone(movie['aliasName']) + ", " + wrapNone(movie['imageUrl']) + ", " + wrapNone(movie['score']) + ", " + wrapNone(movie['scoreAmt']) + ", " + wrapNone(movie['directors']) + ", " + wrapNone(movie['writers']) + ", " + wrapNone(movie['actors']) + ", " + wrapNone(movie['releaseDate']) + ", " + wrapNone(movie['runTime']) + ", " + wrapNone(movie['summary']) + ");\n"
+    return "INSERT IGNORE INTO `randocy`.`doubaninfo` (`doubanId`, `name`, `aliasName`, `imageUrl`, `score`, `scoreAmt`, `directors`, `writers`, `actors`, `releaseDate`, `runTime`, `summary`) VALUES (" + wrapNone(movie['doubanId']) + ", " + wrapNone(movie['name']) + ", " + wrapNone(movie['aliasName']) + ", " + wrapNone(movie['imageUrl']) + ", " + wrapNone(movie['score']) + ", " + wrapNone(movie['scoreAmt']) + ", " + wrapNone(movie['directors']) + ", " + wrapNone(movie['writers']) + ", " + wrapNone(movie['actors']) + ", " + wrapNone(movie['releaseDate']) + ", " + wrapNone(movie['runTime']) + ", " + wrapNone(movie['summary']) + ");\n"
     
 def insertSiteSql(host, url, doubanId):
-    return "INSERT INTO `randocy`.`site` (`host`, `url`, `updateTime`, `DoubanInfo_doubanId`) VALUES ('" + host + "', '" + url + "', CURRENT_TIMESTAMP, '" + doubanId + "');\n"
+    return "INSERT IGNORE INTO `randocy`.`site` (`host`, `url`, `updateTime`, `DoubanInfo_doubanId`, `bugReport`) VALUES ('" + host + "', '" + url + "', CURRENT_TIMESTAMP, '" + doubanId + "', 0);\n"
     
