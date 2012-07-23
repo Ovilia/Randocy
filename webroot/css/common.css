@@ -2,18 +2,8 @@
 
 body {
 	font-size: 14px;
-	
-	background: #c28f2f; /* Old browsers */
-	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
-	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2MyOGYyZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUxJSIgc3RvcC1jb2xvcj0iIzgyNWMyMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjMjhmMmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-	background: -moz-linear-gradient(top,  #c28f2f 0%, #825c20 51%, #c28f2f 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c28f2f), color-stop(51%,#825c20), color-stop(100%,#c28f2f)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #c28f2f 0%,#825c20 51%,#c28f2f 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #c28f2f 0%,#825c20 51%,#c28f2f 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #c28f2f 0%,#825c20 51%,#c28f2f 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  #c28f2f 0%,#825c20 51%,#c28f2f 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c28f2f', endColorstr='#c28f2f',GradientType=0 ); /* IE6-8 */
 
+	background-color: #CBA431;
 }
 
 a {
@@ -22,9 +12,10 @@ a {
 
 #content {
 	width: 620px;
-	height: 800px;
+    height: 100%;
 	margin-left: 150px;
 	padding: 25px;
+    overflow: auto;
 	
 	background-color: #2D2D2D;
 	color: #2D2D2D;
@@ -34,6 +25,10 @@ a {
 	box-shadow: 0px 0px 5px 5px rgba(200, 200, 200, 0.5);
 }
 
+#title {
+	margin-bottom: 20px;
+}
+
 .movie {
 	margin: 5px;
 	width: 180px;
@@ -41,19 +36,19 @@ a {
 	overflow: hidden;
 	padding: 7px;
 	float: left;
+    
+	background-color: #BAD455;
 	
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
 	-webkit-box-shadow: 0px 0px 2px 2px #9F9694;
 	box-shadow: 0px 0px 2px 2px #9F9694;
+    
+    cursor: pointer;
 }
 
-.movieColor1 {
+.movie:hover {
 	background-color: #72C7EB;
-}
-
-.movieColor2 {
-	background-color: #BAD455;
 }
 
 .movieImg {
@@ -67,7 +62,7 @@ a {
 }
 
 .movieName {
-	font-size: 16px;
+	font-size: 14px;
 }
 
 .doubanImg {
@@ -98,7 +93,7 @@ a {
 }
 
 .moviePlay {
-	margin-top: 10px;
+	margin-top: 5px;
 }
 
 .operation > a {
@@ -118,9 +113,10 @@ a {
 	background-color: #ddd;
 	color: #708C01;
 	width: 280px;
-	height: 400px;
+	height: 500px;
+    overflow: hidden;
 	padding: 40px;
-	font-size: 10px;
+	font-size: 12px;
 	
 	position: fixed;
 	top: 20px;
