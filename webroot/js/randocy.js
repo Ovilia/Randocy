@@ -1,4 +1,23 @@
 $(function(){
+    $("button").button();
+    $("#navRadio").buttonset();
+    
+    $("#authorRadio").click(function(){
+        $("#moviePanel").slideUp();
+        $("#authorPanel").slideDown();
+        $("#detailPanel").animate({
+            left: 500
+        }, 500);
+    });
+    
+    $("#movieRadio").click(function(){
+        $("#authorPanel").slideUp();
+        $("#moviePanel").slideDown();
+        $("#detailPanel").animate({
+            left: 500
+        }, 500);
+    });
+    
     var movieCnt = 30;
     var movieEach = 6;
     // load movies when init

@@ -3,7 +3,7 @@
 body {
 	font-size: 14px;
 
-	background-color: #CBA431;
+	background-color: #72c7eb;
 }
 
 a {
@@ -13,6 +13,7 @@ a {
 #content {
 	width: 620px;
     height: 100%;
+    min-height: 600px;
 	margin-left: 150px;
 	padding: 25px;
     overflow: auto;
@@ -26,7 +27,7 @@ a {
 }
 
 #title {
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 .movie {
@@ -159,10 +160,45 @@ a {
 	margin-left: 80px;
 }
 
-span {
+#moviePanel, #detailPanel span {
 	color: #015B82;
 }
 
 #detailDown {
 	margin: 10px 0px;
+}
+
+#nav {
+    float: right;
+    margin-top: -50px;
+}
+
+#authorPanel {
+    color: #72C7EB;
+    display: none;
+}
+
+#authorImg {
+    margin: 10px 0px 5px 200px;
+}
+
+#douban {
+    width: 300px;
+    overflow: hidden;
+}
+
+#weiboShow {
+    margin-left: 310px;
+    margin-top: -530px;
+    float: left;
+}
+
+#doubanImg {
+    margin-left: 127px;
+}
+
+#weiboImg {
+    margin-left: 415px;
+    margin-top: -558px;
+    float: left;
 }
