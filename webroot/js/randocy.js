@@ -1,8 +1,10 @@
-$(function(){
+ï»¿$(function(){
     $("button").button();
     $("#navRadio").buttonset();
     
+    viewAuthor = false;
     $("#authorRadio").click(function(){
+        viewAuthor = true;
         $("#moviePanel").slideUp();
         $("#authorPanel").slideDown();
         $("#detailPanel").animate({
@@ -11,6 +13,7 @@ $(function(){
     });
     
     $("#movieRadio").click(function(){
+        viewAuthor = false;
         $("#authorPanel").slideUp();
         $("#moviePanel").slideDown();
         $("#detailPanel").animate({
@@ -27,16 +30,18 @@ $(function(){
 
     // load image when scroll to end
     $(window).scroll(function () {
-        var winH = $(window).height(); //ä¯ÀÀÆ÷¿ÉÊÓÇøÓòÒ³ÃæµÄ¸ß¶È
-        var pageH = $(document.body).height(); //Ò³Ãæ×Ü¸ß¶È   
-        var scrollT = $(window).scrollTop(); //¹ö¶¯Ìõtop   
-        var ratio = (pageH - winH - scrollT) / winH;
-        
-        if(ratio < 0.1){
-            $.get('loadMovie.php', {'isBrief': 'true', 'start': movieCnt, 'count': movieEach}, function(data) {
-                $("#moviePanel").append(data);
-            });
-            movieCnt += movieEach;
+        if (viewAuthor === false) {
+            var winH = $(window).height(); //æµè§ˆå™¨å¯è§†åŒºåŸŸé¡µé¢çš„é«˜åº¦
+            var pageH = $(document.body).height(); //é¡µé¢æ€»é«˜åº¦   
+            var scrollT = $(window).scrollTop(); //æ»šåŠ¨æ¡top   
+            var ratio = (pageH - winH - scrollT) / winH;
+            
+            if(ratio < 0.1){
+                $.get('loadMovie.php', {'isBrief': 'true', 'start': movieCnt, 'count': movieEach}, function(data) {
+                    $("#moviePanel").append(data);
+                });
+                movieCnt += movieEach;
+            }
         }
     });   
 });
