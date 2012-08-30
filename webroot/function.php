@@ -1,8 +1,8 @@
 <?php
 function connectDb() {
-    $link = mysql_connect("localhost", "root", "") 
+    $link = mysql_connect(SAE_MYSQL_HOST_M . ":" .  SAE_MYSQL_PORT, SAE_MYSQL_USER, SAE_MYSQL_PASS) 
         or die("Could not connect");
-    mysql_select_db("randocy") or die("Could not select database");
+    mysql_select_db(SAE_MYSQL_DB) or die("Could not select database");
     mysql_query("SET NAMES 'utf8'", $link);
     return $link;
 }
@@ -10,7 +10,7 @@ function connectDb() {
 function getMovieBrief($start, $count) {
     $link = connectDb();
     $query = "SELECT doubanId, name, imageUrl, score FROM `doubaninfo` WHERE doubanId IN " .
-        "(SELECT DoubanInfo_doubanId FROM `site` WHERE `bugReport` < 5) " .
+        "(SELECT DoubanInfo_doubanId FROM `site` WHERE `bugReport` < 50) " .
         "ORDER BY score DESC , scoreAmt DESC LIMIT " . $start . " , " . $count;
     $result = mysql_query($query) or die("Query failed"); 
     
@@ -55,7 +55,7 @@ function hideMovie($url) {
     $cnt = $line['bugReport'];
     mysql_free_result($result);
     
-    $query = "UPDATE `site` SET `bugReport` = " . ($cnt + 10) . " WHERE url = '" . $url . "'";
+    $query = "UPDATE `site` SET `bugReport` = " . ($cnt + 1) . " WHERE url = '" . $url . "'";
     mysql_query($query) or die("Query failed"); 
     
     mysql_close($link);
